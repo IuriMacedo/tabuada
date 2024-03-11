@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+        body{
+            background-image: url(https://cdn.pixabay.com/photo/2015/12/01/15/43/black-1072366_1280.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+       h2{
+        color: aliceblue;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        font-size: 35px;
+       }
+       input{
+        margin-left: 530px;
+        margin-top: 25px;
+       }
+       table{
+        font-size: 20px;
+        color: aliceblue;
+        margin-left: 590px;
+        margin-top: 30px;
+       }
+       h3{
+        color: aliceblue;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 25px;
+        margin-left: 595px;
+        margin-top: 70px;
+       }
+
+       footer{
+        color: aliceblue;
+        font-size: 25px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+       }
+       p{
+        color: brown;
+        font-size: 25px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+       }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <h2>Gerador de Tabuada</h2>
+        <input type="numbem" id="numInput" placeholder="Digite um número">
+        <button onclick="geradorTabuada()">Gerar Tabuada</button>
+        <div id="tabuada"></div>
+    </div>
+
+    <script>
+        function geradorTabuada() {
+            var numInput = document.getElementById("numInput").value;
+            var tabuadaDiv = document.getElementById("tabuada");
+            tabuadaDiv.innerHTML = "";
+
+            if (!numInput || isNaN(numInput)) {
+                tabuadaDiv.innerHTML = "<p>Por Favor, Insira um número válido.</p>";
+                return;
+            }
+
+            var tableHTML = "<h3>Tabuada do " + numInput + "</h3> <table border='1'> <tr> <th> Número </th> <th> Resultado </th> </tr>";
+
+            for (var i = 1; i <= 10; i++) {
+                tableHTML += "<tr><td>" + "x" + i + "</td><td>" + (numInput * i) + "</td></tr>";
+            }
+
+            tableHTML += "</table>";
+            tabuadaDiv.innerHTML = tableHTML;
+
+        }
+    </script>
+
+</body>
+
+<footer>
+    Programado por Iuri Macedo| Turma C| 2024
+</footer>
+
+</html>
